@@ -1,66 +1,148 @@
-HEAD
-# CodeIgniter 4 Application Starter
+# Anonymous Survey System
 
-## What is CodeIgniter?
+## Project Description
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+This project is an Anonymous Survey System developed using the CodeIgniter 4 framework.
+It allows administrators to upload survey questions through a CSV file and automatically generate a web-based questionnaire.
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+Each survey has a unique URL that can be shared with users. Users can access the survey, submit their responses, and no login is required, ensuring full anonymity.
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+## Features
 
-The user guide corresponding to the latest version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/).
+### Admin Features
 
-## Installation & updates
+* Secure login system
+* Upload CSV file to create surveys
+* Automatic question generation from CSV
+* Unique survey URL generation
+* Enable/Disable survey access
+* View and download survey results in CSV format
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+###  User Features
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+* Access survey via URL
+* No login required
+* Submit responses anonymously
 
-## Setup
+## 📂 CSV Format
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+Each row in the CSV file must follow this format:
 
-## Important Change with index.php
+```text
+Question, CorrectAnswer, WrongOption1, WrongOption2, ...
+```
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+## Technologies Used
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+* PHP (CodeIgniter 4 Framework)
+* MySQL 
+* HTML, CSS
+* JavaScript
+* XAMPP (Local Server)
 
-**Please** read the user guide for a better explanation of how CI4 works!
+---
 
-## Repository Management
+## Installation Guide
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+### 1. Clone the repository
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+```bash
+git clone https://github.com/vidhi-16/survey-system.git
+```
 
-## Server Requirements
+---
 
-PHP version 7.4 or higher is required, with the following extensions installed:
+### 2. Move to project folder
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+```bash
+cd survey-system
+```
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+---
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+### 3. Install dependencies
 
-# survey-system
- 7806975dc3d30b9b6b0aaa63729a7e72bcd52bf9
+```bash
+composer install
+```
+
+---
+
+### 4. Configure Environment File
+
+Copy `.env.example` to `.env` and update database settings:
+
+```env
+database.default.hostname = localhost
+database.default.database = survey_db
+database.default.username = root
+database.default.password =
+database.default.DBDriver = MySQLi
+```
+
+### 5. Create Database
+
+Create a database in MySQL:
+
+```sql
+CREATE DATABASE survey_db;
+```
+
+Import required tables (or run your SQL scripts).
+
+---
+
+### 6. Run the Project
+
+```bash
+php spark serve
+```
+
+---
+
+### 7. Open in Browser
+
+```text
+http://localhost:8080
+```
+
+##  Admin Access
+
+Login page:
+
+```text
+http://localhost:8080/login
+```
+
+## 🔗 Survey Access
+
+Example:
+
+```text
+http://localhost:8080/survey/1
+```
+
+
+## Export Results
+
+Admins can download survey responses in CSV format directly from the dashboard.
+
+
+## Key Concepts Used
+
+* MVC Architecture
+* File Handling (CSV Processing)
+* Database Integration
+* Dynamic Web Page Generation
+* Authentication System
+* CRUD Operations
+
+
+##  Conclusion
+
+This project demonstrates how to build a dynamic, database-driven survey system with anonymous user participation using CodeIgniter 4.
+
+
+## 👩‍💻 Author
+
+Vidhi Patel

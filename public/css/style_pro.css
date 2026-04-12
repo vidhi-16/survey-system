@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+table {
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+div{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+table th, table td {
+    padding-left: 200px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+table th {
+    background: #007bff;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+a.enable {
+    background: green;
+    color: white;
+}
+
+a.disable {
+    background: red;
+    color: white;
+}
+
+a.download {
+    background: #17a2b8;
+    color: white;
+}
+
+.status-on {
+    color: green;
+    font-weight: bold;
+}
+
+.status-off {
+    color: red;
+    font-weight: bold;
+}
+
+/* ===== LOGIN PAGE ===== */
+
+.login-container {
+    width: 350px;
+    margin: 80px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background: #0056b3;
+}
+
+.login-error {
+    color: red;
+    margin-top: 10px;
+}

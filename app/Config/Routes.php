@@ -17,4 +17,4 @@ $routes->get('/admin/download/(:num)','Admin::download/$1');
 $routes->get('/survey/(:any)','Survey::show/$1');
 $routes->post('/survey/submit','Survey::submit');
 
-$routes->get('/admin/export/(:num)', 'Admin::exportResults/$1');
+$routes->get('/admin/export/(:num)', 'Admin::download/$1');
